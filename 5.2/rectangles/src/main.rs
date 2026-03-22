@@ -12,6 +12,14 @@ fn main() {
     };
 
     println!("rect1 is {rect1:#?}");
+
+    let scale = 2;
+    let rect2 = Rectangle {
+        width: dbg!(30 * scale),
+        height: 50,
+    };
+
+    dbg!(&rect2);
 }
 
 #[derive(Debug)]
