@@ -38,6 +38,25 @@ struct Rectangle {
 }
 
 impl Rectangle {
+    // All functions defined within an impl block are called associated functions because
+    // they’re associated with the type named after the impl. We can define associated
+    // functions that don’t have self as their first parameter (and thus are not methods)
+    // because they don’t need an instance of the type to work with.
+
+    // Associated function (not a method)
+    // The Self keywords in the return type and in the body of the function are aliases
+    // for the type that appears after the impl keyword, which in this case is Rectangle.
+    //
+    // To call this associated function, we use the :: syntax with the struct name
+    fn square(size: u32) -> Self {
+        Self {
+            width: size,
+            height: size,
+        }
+    }
+
+    // Method
+    // self is a reference to the instance of the struct that the method is called on.
     fn area(&self) -> u32 {
         self.width * self.height
     }
